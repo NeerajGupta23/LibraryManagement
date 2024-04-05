@@ -46,7 +46,7 @@ public class MainApp {
 			case "insert":
 				if (choice.thing.equalsIgnoreCase("book")) {
 					Insert.insertBook(connection, scanner);
-					
+
 				} else {
 					Insert.insertBorrower(connection, scanner);
 				}
@@ -64,13 +64,12 @@ public class MainApp {
 				if (choice.thing.equalsIgnoreCase("book")) {
 					Update.updateBookQuantity(connection, scanner);
 				} else {
-					
+					Update.updateBorrowerFine(connection, scanner);
 				}
 				break;
-				
+
 			case "clear":
-				System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n"
-						+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+				System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n" + "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 						+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 				break;
 
@@ -87,18 +86,16 @@ public class MainApp {
 
 	}
 
-
 	private static void inputOperationLowerCase(Scanner scanner, InputChoice choice) {
 		System.out.print("\nWhat you want to do [read/insert/delete/update/quit/clear]:: ");
 		choice.task = scanner.next();
 
 		if (choice.task.equalsIgnoreCase("quit")) {
 			return;
-		}		
+		}
 		if (choice.task.equalsIgnoreCase("clear")) {
 			return;
 		}
-		
 
 		System.out.print("[book/borrower] :: ");
 		choice.thing = scanner.next();
